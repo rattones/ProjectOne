@@ -1,0 +1,68 @@
+<template>
+    <lightning-card title="Search CEP">
+        <div class="slds-p-horizontal_small">
+            <lightning-input
+                type="number"
+                label="CEP"
+                value={cep}
+                onchange={handleCEPChange}>
+            </lightning-input>
+            <lightning-button
+                class="slds-"
+                type="button"
+                label="Consultar CEP"
+                onclick={handleClick}>
+            </lightning-button>
+            <lightning-input
+                type="text"
+                label="Logradouro"
+                value={logradouro}
+                onchange={handleLogradouroChange}>
+            </lightning-input>
+            <lightning-input
+                type="text"
+                label="Complemento"
+                value={complemento}
+                onchange={handleComplementoChange}>
+            </lightning-input>
+            <lightning-input
+                type="text"
+                label="Bairro"
+                value={bairro}
+                onchange={handleBairroChange}>
+            </lightning-input>
+            <lightning-input
+                type="text"
+                label="Localidade"
+                value={localidade}
+                onchange={handleLocalidadeChange}>
+            </lightning-input>
+            <lightning-input
+                type="text"
+                label="UF"
+                value={uf}
+                onchange={handleUFChange}>
+            </lightning-input>
+            <lightning-input
+                type="text"
+                label="DDD"
+                value={ddd}
+                onchange={handleDDDChange}>
+            </lightning-input>
+            <lightning-button
+                class="slds-"
+                type="button"
+                label="Billing Address"
+                onclick={handleAddToBillingAddress}
+                >
+            </lightning-button>
+            <lightning-button
+                class="slds-"
+                type="button"
+                label="Shipping Address"
+                onclick={handleAddToShippingAddress}
+                >
+            </lightning-button>
+        </div>
+    </lightning-card>
+</template>
