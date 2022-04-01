@@ -1,7 +1,8 @@
 
-public with sharing class AccountTriggerHandler extends TriggerHandler {
+public class AccountTriggerHandler extends TriggerHandler {
 
-    private static AccountBO bo= AccountBO.getInstance();
+    // private static AccountBO bo= AccountBO.getInstance();
+    private AccountBO bo= new  AccountBO();
 
     // public AccountTriggerHandler() {}
 
@@ -14,4 +15,8 @@ public with sharing class AccountTriggerHandler extends TriggerHandler {
     }
 
     public override void beforeDelete() {}
+
+    public override void afterInsert() {
+        bo.accountInspectData(Trigger.new);
+    }
 }

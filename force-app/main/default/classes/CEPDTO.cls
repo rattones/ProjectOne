@@ -1,4 +1,4 @@
-public with sharing class CEPDTO {
+public class CEPDTO {
     public class CEPDTOException extends Exception {}
 
     public CEPDTO() {}
@@ -7,7 +7,7 @@ public with sharing class CEPDTO {
         public String cep {get;set;}
 
         public CEPRequest(String cep) {
-            this.cep= Utility.getInstance().CEPFormat(cep);
+            this.cep= Utility.CEPFormat(cep);
         }
     }
 

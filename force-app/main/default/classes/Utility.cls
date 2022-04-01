@@ -1,13 +1,15 @@
-public with sharing class Utility {
+public class Utility {
 
-    private static final Utility instance= new Utility();
-    public static Utility getInstance() {
-        return instance;
-    }
+    // private static final Utility instance= new Utility();
+    // public static Utility getInstance() {
+    //     return instance;
+    // }
+
+    // public static Utility util= new Utility();
 
     public Utility() {}
 
-    public String phoneNumberFormat(SObject obj, String field) {
+    public static String phoneNumberFormat(SObject obj, String field) {
 
         String phone= (String)obj.get(field);
         // System.debug(phone);
@@ -28,13 +30,13 @@ public with sharing class Utility {
         return phone;
     }
 
-    public String CEPFormat(SObject obj, String field) {
+    public static String CEPFormat(SObject obj, String field) {
         String cep= (String)obj.get(field);
         // System.debug(cep);
         if (cep == null) {
             return null;
         }
-        cep= this.CEPFormat(cep);
+        cep= Utility.CEPFormat(cep);
         if (cep == null) {
             obj.addError(field, 'Invalid CEP: '+cep);
             return null;
@@ -42,7 +44,7 @@ public with sharing class Utility {
 
         return cep;
     }
-    public String CEPFormat(String cep) {
+    public static String CEPFormat(String cep) {
         if (cep == null) {
             return null;
         }
@@ -60,7 +62,7 @@ public with sharing class Utility {
         return cep;
     }
 
-    public String CPFMask(SObject obj, String field) {
+    public static String CPFMask(SObject obj, String field) {
         String cpf= (String)obj.get(field);
 
         if (cpf == null) {
@@ -74,8 +76,7 @@ public with sharing class Utility {
             obj.addError(field, 'Invalid CPF: '+cpf);
         }
 
-        cpf= verifyCPF.replaceAll('$1.$3.$5-$7'); // @TODO replaceAll não está funcionando corretamente
-        obj.put(field, cpf);
+        cpf= verifyCPF.replaceAll('$1.$3.$5-$7'); 
         return cpf;
     }
 }

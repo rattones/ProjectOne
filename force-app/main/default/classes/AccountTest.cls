@@ -98,10 +98,19 @@ private class AccountTest {
         Account  account= new Account(Name='Account test', CPF__c= '01234567890');
 
         Test.startTest();
-        Database.SaveResult rs= Database.insert(account, false);
-        Test.stopTest();
+        Database.SaveResult rs= Database.insert(account);
 
+        // OK, passaram
+        // Account inserted= [SELECT CPF__c FROM Account  WHERE Id= :rs.getId()];
+        // System.assertEquals('012.345.678-90', inserted.CPF__c);
         // System.assert(rs.isSuccess());
+        
+        // ERRO, não passaram
+        // String cpf= (String)account.get('CPF__c');
+        // System.assertEquals('012.345.678-90', cpf);
         System.assertEquals('012.345.678-90', account.CPF__c);
+        // System.assert(true);
+
+        Test.stopTest();
     }
 }

@@ -1,7 +1,8 @@
 
 public with sharing class ContactTriggerHandler extends TriggerHandler {
 
-    private static ContactBO bo= ContactBO.getInstance();
+    // private static ContactBO bo= ContactBO.getInstance();
+    private ContactBO bo= new ContactBO();
 
     // public ContactTriggerHandler() {}
 

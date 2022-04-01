@@ -1,11 +1,12 @@
-public with sharing class AccountBO {
+public class AccountBO {
 
-    private static final AccountBO instance= new AccountBO();
-    private static Utility util= Utility.getInstance();
+    // private static final AccountBO instance= new AccountBO();
+    // private static Utility util= Utility.getInstance();
+    private static Utility util= new Utility();
 
-    public static AccountBO getInstance() {
-        return instance;
-    }
+    // public static AccountBO getInstance() {
+    //     return instance;
+    // }
     public class AccountBOException extends Exception {}
 
     public void accountValidation(List<Account> account) {
@@ -19,6 +20,12 @@ public with sharing class AccountBO {
 
             item.CPF__c= util.CPFMask((SObject)item, 'CPF__c');
             System.debug(item.CPF__c);
+        }
+    }
+
+    public void accountInspectData(List<Account> account) {
+        for (Account item: account) {
+            System.debug(item);
         }
     }
 }

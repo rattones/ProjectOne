@@ -1,11 +1,12 @@
 public with sharing class ContactBO {
 
-    private static final ContactBO instance= new ContactBO();
-    private static Utility util= Utility.getInstance();
+    // private static final ContactBO instance= new ContactBO();
+    // private static Utility util= Utility.getInstance();
+    private static Utility util= new Utility();
 
-    public static ContactBO getInstance() {
-        return instance;
-    }
+    // public static ContactBO getInstance() {
+    //     return instance;
+    // }
 
     public void contactValidation(List<Contact> contact) {
         for (Contact item: contact) {

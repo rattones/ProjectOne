@@ -1,9 +1,9 @@
 public class SearchCEPService {
 
-    private static final SearchCEPService instance= new SearchCEPService();
-    public static SearchCEPService getInstance() {
-        return instance;
-    }    
+    // private static final SearchCEPService instance= new SearchCEPService();
+    // public static SearchCEPService getInstance() {
+    //     return instance;
+    // }    
 
     public class SearchCEPServiceException extends Exception {}
 
